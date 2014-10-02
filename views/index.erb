@@ -22,10 +22,18 @@
           <% messages.each do |message| %>
             <li>
               <div class="message-body">
+              <%= message.id %
                 <%= message.body %>
               </div>
+              <button id="likes" onclick="
+              
+              clicks = clicks + 1;
+              document.getElementById('likes').innerHTML= 'like (' + clicks + ')'
+              
+              "> Like  </button>
+              <script type="text/javascript">var clicks = 0;</script>
               <div class="message-timestamp">
-                Posted on <%= message.created_at.strftime("%B %d, %Y at %l:%M%p") %>
+                Posted on <%= message.created_at.strftime("%B %d, %Y at %I:%M:%S %p ") %>
               </div>
             </li>
           <% end %>
