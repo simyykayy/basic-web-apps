@@ -20,7 +20,7 @@ get("/") do
 end
 
 post("/messages") do
-  message_body = params["body"]
+  message_body = params["body"].capitalize
   message_time = DateTime.now
 
   message = Message.create(body: message_body, created_at: message_time)
